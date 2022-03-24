@@ -54,3 +54,11 @@
         > public class EmployeeDAOImplementation  implements EmployeeDAO{}
       - При поиске компонентов, Spring также будет регистрировать
       - все DAO с аннотацией @Repository в Spring Container-e
+## Annotation @Service
+      > см. annotation_service.jpg
+  - Аннотация @Service отмечает класс, содержащий бизнес-логику.
+  - В иерархии компонентов приложения Service является соед. звеном
+    - между Controller и DAO
+  - @Service это специализированный @Component. 
+    - При поиске компонентов Spring зарег. все классы с @Service в Spring Container
+  - Плюс = транзакционность соблюдается на уровне сервиса. см @Transactional
