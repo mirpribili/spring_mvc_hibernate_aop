@@ -4,6 +4,7 @@
    - Добавление dependency in pom.xml
    - Settings  web.xml
    - Settings applicationContext.xml
+   - Smart Tomcat -> Deployment folder:/home/kde/Документы/java/VTB24/spring_mvc/spring_mvc_hibernate_aop/spring_mvc_hibernate_aop/src/main/webapp
 >
 ## Подготовка БД и таблиц
 1. sudo mysql
@@ -13,7 +14,7 @@
    - mysql -u bestuser -p bestuser
    - **sudo systemctl status mysql**
    - sudo service mysql restart
-   - exit
+   - exit;
 2. **show databases;**
 3. SELECT * from my_db.employees; 
 4. **CREATE DATABASE my_db_spring_mvc_aop;**
@@ -42,3 +43,14 @@
     ('Oleg', 'Ivanov', 'Sales', 700),
     ('Nina', 'Sidorova', 'HR', 850);
 9. **SELECT * FROM my_db_spring_mvc_aop.employees;**
+## Отображение списка всех работников
+> см. structure_for_view_all_employees.jpg
+  - src/main/java/org/example/spring/mvc/mvc_hibernate_aop/dao/EmployeeDAOImplementation.java
+    - @Transactional - после этой аннотации Spring берет на себя откр\закр транзакций.
+  - @Controller - специализированный @Component
+    - для DAO будет выглядеть так: 
+      - > @Repository
+        > 
+        > public class EmployeeDAOImplementation  implements EmployeeDAO{}
+      - При поиске компонентов, Spring также будет регистрировать
+      - все DAO с аннотацией @Repository в Spring Container-e

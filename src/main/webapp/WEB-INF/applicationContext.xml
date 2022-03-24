@@ -28,10 +28,10 @@
     <!-- связь с БД
                 данный connection pull оптимизирует создание и завершение создания соединения сам, тк это ресурсоемкая задача
     -->
-    <bean id="dataSource0" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.cj.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/my_db?useSSL=false&amp;serverTimezone=UTC" />
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/my_db_spring_mvc_aop?useSSL=false&amp;serverTimezone=UTC" />
         <property name="user" value="bestuser" />
         <property name="password" value="bestuser" />
     </bean>
@@ -40,7 +40,7 @@
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <!-- -->
         <!-- ссылка на предыдущий биан с connection pull -->
-        <property name="dataSource" ref="dataSource0" />
+        <property name="dataSource" ref="dataSource" />
         <!-- пакеты для сканирования с нашими entity необходимыми для связывания таблицы с классом -->
         <property name="packagesToScan" value="org.example.spring.mvc.mvc_hibernate_aop.entity" />
         <property name="hibernateProperties">
