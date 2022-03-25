@@ -62,4 +62,7 @@
   - @Service это специализированный @Component. 
     - При поиске компонентов Spring зарег. все классы с @Service в Spring Container
   - Плюс = транзакционность соблюдается на уровне сервиса. см @Transactional
-## Добавление нового работника 
+## Добавление нового работника
+## Обновление данных работника
+  - session.saveOrUpdate() from hibernate 
+    - equals: if id == 0 save or update

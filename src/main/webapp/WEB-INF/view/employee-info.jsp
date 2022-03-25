@@ -5,10 +5,12 @@
 	<h2>Employee info</h2>
 	<br>
 	<form:form action="saveEmployee" modelAttribute="employee">
-		<p>Name <form:input path="name" value="Xenos" /></p>
-		<p>Surname <form:input path="surname" value="Zena"/></p>
-		<p>Department <form:input path="department" value="HR" /></p>
-		<p>Salary <form:input path="salary" value="900" /></p>
+	    <form:hidden path="id"/>
+
+		<p>Name <form:input path="name"/></p>
+		<p>Surname <form:input path="surname"/></p>
+		<p>Department <form:input path="department"/></p>
+		<p>Salary <form:input path="salary"/></p>
 		<p><input type="submit" value="OK"></p>
 	</form:form>
 </body>
